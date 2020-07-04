@@ -1,0 +1,17 @@
+pragma solidity ^0.6.0;
+contract mapping_in_solidity{
+    uint peopleCount =0;
+    mapping(uint=>Person) public people;
+    struct Person {
+        uint id;
+        string first_name;
+        string last_name;
+    }
+    
+    function add_person(string memory first_name, string memory last_name) public {
+        peopleCount+=1;
+        people[peopleCount]=Person(peopleCount,first_name,last_name);
+    }
+    
+   
+}
